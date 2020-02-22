@@ -1,0 +1,1 @@
+web: gunicorn godaddies_list.wsgi

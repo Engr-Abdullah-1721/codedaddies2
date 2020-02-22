@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Go Daddies</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="{% static 'js/materialize.min.js'%}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'font/css/all.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+	<style type="text/css">
+		h1{
+	color:green;
+	}
+
+	h2{
+		background: black;
+	}
+	.card{
+		height: 400px;
+		overflow:hidden;
+		overflow-wrap: break-word;
+	}
+	.card-image{
+		height: 250px;
+		overflow:hidden;
+	}
+	.card-content{
+		height: 25%;
+	}
+	.card-action{
+		height: 10px;
+	}
+
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="container nav-wrapper">
+			<a href="/" class="brand-logo">Codedaddies List</a>
+			<ul id="nav-mobile" class="right">
+				<li><a href="/">Home</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!--main part-->
+	<div class="container">
+		<h1 class="center">What Do you want to search for in Codedadies List.</h1>
+		<div class="row" style="margin-top: 25px;">
+			<div class="col s4">
+				<div class="center">
+					<i style="color:#EE6E73;font-size: 100px;" class="fas fa-bolt"></i>
+					<p style="font-weight: bold;">Fast craiglist web scraper</p>
+					<p class="light center">Scrape away right here with a Beautiful GUI.</p>
+				</div>
+			</div>
+			<div class="col s4">
+				<div class="center">
+					<i class="fas fa-camera" style="color:orange;font-size: 100px;"></i>
+					<p style="font-weight: bold;">Filter Your Searches</p>
+					<p class="light center">We built in functionality to filter based on price.</p>
+				</div>
+			</div>
+			<div class="col s4">
+				<div class="center">
+					<i class="fas fa-list-alt" style="color:blue;font-size: 100px;"></i>
+					<p class="font-weight">A much beautiful front-end to Craiglist</p>
+					<p class="light center">We built this with love</p>
+				</div>
+			</div>
+		</div>
+		<!--search form-->
+		<form method="post" action="{% url 'my_app:new_search' %}" class="form col s12">
+			{% csrf_token %}
+			<div class="row">
+				<div class="input-field">
+					<label for="search1">Search</label>
+					<input type="text" id="search1" name="search" class="validate">
+					<button style="background-color:#EE6E73;" type="submit" class="inputText1 waves-effect btn" name="submit">
+						<i style="font-weight: bold">Search <span class="fa fa-"></span></i>
+					</button>
+				</div>
+			</div>
+		</form>
+		<!--search form ends-->
+		
+		{% block content%}
+		{% endblock content%}
+	</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+h1{
+	color:green;
+}
+
+.card{
+	height: 400px;
+	overflow:hidden;
+}
+.card-image{
+	height: 250px;
+	overflow:hidden;
+}
